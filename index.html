@@ -427,9 +427,9 @@
     }
 
     .flash-card {
-      min-height: 410px;
+      min-height: 560px;
       display: grid;
-      align-content: space-between;
+      grid-template-rows: auto minmax(210px, 1fr);
       gap: 18px;
       padding: 24px;
       border: 1px solid var(--line);
@@ -484,7 +484,11 @@
 
     .flash-answer {
       display: grid;
+      align-content: start;
       gap: 10px;
+      min-height: 210px;
+      overflow-y: auto;
+      padding-right: 4px;
     }
 
     .answer-box {
@@ -524,6 +528,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      padding-top: 4px;
+    }
+
+    .flash-side .flash-actions {
+      display: grid;
+      margin-top: 14px;
     }
 
     .flash-button {
@@ -694,15 +704,26 @@
       grid-template-columns: 34px 1fr;
       gap: 10px;
       align-items: start;
-      padding: 10px;
+      padding: 12px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #f8fafc;
+      color: #243447;
     }
 
     .step.question-step {
       background: var(--problem-soft, #f8fafc);
       border-color: color-mix(in srgb, var(--problem-color, var(--blue)) 38%, var(--line));
+    }
+
+    .step.question-step strong {
+      color: var(--problem-color, var(--blue));
+      font-size: 18px;
+    }
+
+    .step.answer-step {
+      background: #fff;
+      border-color: color-mix(in srgb, var(--problem-color, var(--blue)) 20%, var(--line));
     }
 
     .step.answer-step strong:first-child::after {
@@ -734,6 +755,51 @@
     .step strong {
       display: block;
       margin-bottom: 2px;
+    }
+
+    .step-title {
+      color: #334155;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .step-value {
+      color: var(--problem-color, var(--blue));
+      font-weight: 950;
+    }
+
+    .step-candidate {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--problem-color, var(--blue));
+      color: #fff;
+      font-weight: 950;
+      line-height: 1.25;
+    }
+
+    .step-note {
+      display: block;
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-left: 4px solid var(--problem-color, var(--blue));
+      border-radius: 8px;
+      background: var(--problem-soft, #f8fafc);
+      color: #475569;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .step-meaning {
+      color: var(--orange);
+      font-weight: 950;
+    }
+
+    .step-answer {
+      color: var(--green);
+      font-weight: 950;
     }
 
     .step.good {
@@ -905,7 +971,7 @@
       }
 
       .flash-card {
-        min-height: 360px;
+        min-height: 560px;
         padding: 18px;
       }
 
@@ -1009,11 +1075,6 @@
 
           <div class="flash-answer" id="flashAnswer"></div>
 
-          <div class="flash-actions">
-            <button class="flash-button primary" id="showFlashAnswer">めくる</button>
-            <button class="flash-button" id="nextFlashCard">次のカード</button>
-            <button class="flash-button" id="shuffleFlashCards">シャッフル</button>
-          </div>
         </article>
 
         <aside class="flash-side">
@@ -1023,6 +1084,11 @@
             <li>2. 品詞: 接続詞 / 前置詞 / 接続副詞 / 不定詞</li>
             <li>3. 後ろに続く形: S V / 名詞 / 文全体 / 動詞の原形</li>
           </ul>
+          <div class="flash-actions">
+            <button class="flash-button primary" id="showFlashAnswer">めくる</button>
+            <button class="flash-button" id="nextFlashCard">次のカード</button>
+            <button class="flash-button" id="shuffleFlashCards">シャッフル</button>
+          </div>
         </aside>
       </div>
     </section>
@@ -1334,18 +1400,18 @@
     function practiceSteps(problem) {
       const steps = [
         { type: "question", title: "空欄直後の形は？", body: "" },
-        { type: "answer", title: "形", body: `「${problem.afterBlank}」なので <b>${problem.structure}</b>。` },
+        { type: "answer", title: "形", body: `「<span class="step-value">${problem.afterBlank}</span>」なので <span class="step-candidate">${problem.structure}</span>。` },
         { type: "question", title: "どの品詞？", body: "" },
-        { type: "answer", title: "品詞", body: `<b>${displayPos(problem.allowed)}</b>` },
+        { type: "answer", title: "品詞", body: `<span class="step-candidate">${displayPos(problem.allowed)}</span>` },
         { type: "question", title: `どの選択肢が${displayPos(problem.allowed)}？`, body: "" },
-        { type: "answer", title: "候補", body: `<b>${problem.candidateChoices}</b><br><span class="note">補足: ${problem.eliminate}</span>` }
+        { type: "answer", title: "候補", body: `<span class="step-candidate">${problem.candidateChoices}</span><span class="step-note">補足: ${problem.eliminate}</span>` }
       ];
 
       if (problem.candidateChoices.includes(" / ")) {
         steps.push(
         { type: "question", title: "文意に合うのは？", body: "" },
-        { type: "answer", title: "意味確認", body: problem.meaningQuestion },
-        { type: "answer", title: "判断", body: `${problem.meaningAnswer}<br>したがって正解は <b>${problem.answer}</b>。` }
+        { type: "answer", title: "意味確認", body: `<span class="step-meaning">${problem.meaningQuestion}</span>` },
+        { type: "answer", title: "判断", body: `${problem.meaningAnswer}<br>したがって正解は <span class="step-answer">${problem.answer}</span>。` }
         );
       }
 
@@ -1368,7 +1434,7 @@
           <div class="solution" aria-live="polite">
             <ol class="steps">
               ${practiceSteps(problem).map(step => `
-                <li class="step ${step.type}-step"><div><strong>${step.title}</strong>${step.body}</div></li>
+                <li class="step ${step.type}-step"><div><strong class="step-title">${step.title}</strong>${step.body}</div></li>
               `).join("")}
             </ol>
             <div class="result"></div>
