@@ -465,6 +465,13 @@
       overflow-wrap: anywhere;
     }
 
+    .flash-term-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+    }
+
     .flash-prompt {
       margin: 12px 0 0;
       color: var(--muted);
@@ -536,6 +543,10 @@
       margin-top: 14px;
     }
 
+    .flash-side .flash-actions #showFlashAnswer {
+      display: none;
+    }
+
     .flash-button {
       min-height: 42px;
       padding: 9px 13px;
@@ -550,6 +561,11 @@
       color: #fff;
       border-color: var(--flash-color, var(--blue));
       background: var(--flash-color, var(--blue));
+    }
+
+    .flash-flip-button {
+      min-width: 96px;
+      margin-top: 4px;
     }
 
     .flash-side {
@@ -979,6 +995,15 @@
         font-size: 34px;
       }
 
+      .flash-term-row {
+        grid-template-columns: 1fr;
+      }
+
+      .flash-flip-button {
+        width: 100%;
+        margin-top: 0;
+      }
+
       .flash-question {
         font-size: 18px;
       }
@@ -1068,7 +1093,10 @@
         <article class="flash-card" id="flashCard" aria-live="polite">
           <div>
             <div class="flash-kicker" id="flashKicker">Random card</div>
-            <h2 class="flash-term" id="flashTerm">Loading...</h2>
+            <div class="flash-term-row">
+              <h2 class="flash-term" id="flashTerm">Loading...</h2>
+              <button class="flash-button primary flash-flip-button" id="showFlashAnswer">めくる</button>
+            </div>
             <p class="flash-prompt">質問に声で答えてから、めくって確認します。</p>
             <div class="flash-question" id="flashQuestion">品詞は？</div>
           </div>
@@ -1085,7 +1113,6 @@
             <li>3. 後ろに続く形: S V / 名詞 / 文全体 / 動詞の原形</li>
           </ul>
           <div class="flash-actions">
-            <button class="flash-button primary" id="showFlashAnswer">めくる</button>
             <button class="flash-button" id="nextFlashCard">次のカード</button>
             <button class="flash-button" id="shuffleFlashCards">シャッフル</button>
           </div>
