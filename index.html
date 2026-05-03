@@ -721,7 +721,16 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--white);
+      cursor: pointer;
+      text-align: left;
       box-shadow: 0 10px 26px rgba(23, 32, 42, .08);
+    }
+
+    .category-card:hover,
+    .category-card:focus-visible {
+      border-color: var(--accent);
+      outline: 0;
+      transform: translateY(-1px);
     }
 
     .category-card strong {
@@ -730,6 +739,15 @@
       font-size: 15px;
       line-height: 1.2;
       white-space: nowrap;
+    }
+
+    tr[data-group-start],
+    .mobile-vocab-card[data-group-start] {
+      scroll-margin-top: 84px;
+    }
+
+    .jump-highlight {
+      animation: jumpGlow 1.25s ease-out;
     }
 
     .practice-layout {
@@ -1275,6 +1293,17 @@
       to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    @keyframes jumpGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(35, 88, 216, .34);
+        background-color: rgba(35, 88, 216, .12);
+      }
+      100% {
+        box-shadow: 0 0 0 18px rgba(35, 88, 216, 0);
+        background-color: transparent;
       }
     }
 
@@ -2177,9 +2206,9 @@
         const count = vocab.filter(item => item.group === group).length;
         const meanings = [...new Set(vocab.filter(item => item.group === group).map(item => item.meaning))].join(" / ");
         return `
-          <div class="category-card" style="--accent:${groupStyle[group].color}">
+          <button class="category-card" type="button" style="--accent:${groupStyle[group].color}" data-scroll-group="${group}">
             <strong>${group}</strong>
-          </div>
+          </button>
         `;
       }).join("");
     }
@@ -2207,7 +2236,7 @@
     function renderTable() {
       const rows = tableRows();
       document.querySelector("#vocabRows").innerHTML = rows.map(row => `
-        <tr style="${styleVars(row.item.group)}">
+        <tr style="${styleVars(row.item.group)}" data-group="${row.item.group}" ${row.firstInGroup ? `data-group-start="${row.item.group}"` : ""}>
           ${row.firstInGroup ? `<td class="merged-cell" rowspan="${row.groupSpan}"><span class="group-badge">${row.item.group}</span></td>` : ""}
           <td class="term">${row.item.term}</td>
           ${row.firstInMeaning ? `<td class="merged-cell meaning" rowspan="${row.meaningSpan}">${row.item.meaning}</td>` : ""}
@@ -2216,7 +2245,7 @@
         </tr>
       `).join("");
       document.querySelector("#mobileVocabList").innerHTML = rows.map(row => `
-        <article class="mobile-vocab-card" style="${styleVars(row.item.group)}">
+        <article class="mobile-vocab-card" style="${styleVars(row.item.group)}" data-group="${row.item.group}" ${row.firstInGroup ? `data-group-start="${row.item.group}"` : ""}>
           <div class="mobile-vocab-head">
             <span class="group-badge">${row.item.group}</span>
             <span class="pos ${posClass[row.item.pos]}">${row.item.pos}</span>
@@ -2245,6 +2274,18 @@
 
     function highlightedTranslation(problem) {
       return highlightText(problem.translation, problem.translationTarget);
+    }
+
+    function jumpToVocabGroup(group) {
+      const mobileVisible = getComputedStyle(document.querySelector("#mobileVocabList").closest(".mobile-vocab")).display !== "none";
+      const candidates = [...document.querySelectorAll(mobileVisible ? ".mobile-vocab-card[data-group-start]" : "tr[data-group-start]")];
+      const target = candidates.find(element => element.dataset.groupStart === group);
+      if (!target) return;
+
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.classList.remove("jump-highlight");
+      void target.offsetWidth;
+      target.classList.add("jump-highlight");
     }
 
     function updateGuideTypeButtons() {
@@ -2539,6 +2580,12 @@
       const patternButton = event.target.closest("[data-example-term]");
       if (patternButton) {
         showStructureExample(patternButton.dataset.exampleTerm, patternButton);
+        return;
+      }
+
+      const categoryButton = event.target.closest("[data-scroll-group]");
+      if (categoryButton) {
+        jumpToVocabGroup(categoryButton.dataset.scrollGroup);
         return;
       }
 
