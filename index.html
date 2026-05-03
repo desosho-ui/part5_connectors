@@ -77,39 +77,6 @@
       line-height: 1.25;
     }
 
-    .subtitle {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 96px);
-      gap: 8px;
-    }
-
-    .hero-stat {
-      min-height: 78px;
-      padding: 11px;
-      border: 1px solid rgba(22, 32, 42, .1);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, .84);
-      text-align: center;
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-size: 24px;
-      line-height: 1;
-    }
-
-    .hero-stat span {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
     .tabs {
       display: flex;
       gap: 8px;
@@ -385,16 +352,17 @@
     }
 
     .category-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 10px;
       margin: 0 0 16px;
     }
 
     .category-card {
       position: relative;
-      min-height: 80px;
-      padding: 12px 12px 12px 18px;
+      min-height: 0;
+      width: fit-content;
+      padding: 8px 12px 8px 18px;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -406,12 +374,8 @@
       display: block;
       color: var(--accent);
       font-size: 15px;
-    }
-
-    .category-card span {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
     .practice-layout {
@@ -907,11 +871,6 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-stats,
-      .category-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
       table {
         min-width: 900px;
       }
@@ -947,15 +906,6 @@
 
       h1 {
         font-size: 25px;
-      }
-
-      .hero-stats,
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-stats {
-        display: none;
       }
 
       .tabs {
@@ -1039,12 +989,6 @@
     <header>
       <div>
         <h1>接続詞・前置詞・接続副詞 TOEIC頻出語彙</h1>
-        <p class="subtitle">元PDFの表をそのまま学習の中心にして、空欄問題は別タブで段階的に確認します。</p>
-      </div>
-      <div class="hero-stats" aria-label="教材サマリー">
-        <div class="hero-stat"><strong>18</strong><span>頻出表現</span></div>
-        <div class="hero-stat"><strong>6</strong><span>意味カテゴリ</span></div>
-        <div class="hero-stat"><strong>9</strong><span>解説ステップ</span></div>
       </div>
     </header>
 
@@ -1372,7 +1316,6 @@
         return `
           <div class="category-card" style="--accent:${groupStyle[group].color}">
             <strong>${group}</strong>
-            <span>${groupStyle[group].label}・${count}語・${meanings}</span>
           </div>
         `;
       }).join("");
