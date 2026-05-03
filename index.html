@@ -1,0 +1,1492 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>接続詞・前置詞・接続副詞 TOEIC頻出語彙</title>
+  <style>
+    :root {
+      --ink: #16202a;
+      --muted: #66758a;
+      --line: #d8e0e8;
+      --paper: #f4f7fb;
+      --white: #fff;
+      --head: #eef4fb;
+      --blue: #2358d8;
+      --green: #0d8b68;
+      --orange: #c0691b;
+      --red: #b73535;
+      --violet: #6b4fd2;
+      --cyan: #0c86a0;
+      --rose: #be3c74;
+      --lime: #5a8f22;
+      --soft-blue: #eef4ff;
+      --soft-green: #ecf8f3;
+      --soft-orange: #fff4e8;
+      --soft-red: #fff0f0;
+      --shadow: 0 22px 55px rgba(23, 32, 42, .13);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(35, 88, 216, .13), transparent 32%),
+        radial-gradient(circle at 92% 8%, rgba(13, 139, 104, .12), transparent 31%),
+        linear-gradient(180deg, #eef4fb 0%, var(--paper) 280px, #f8fafc 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    header {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: end;
+      margin-bottom: 18px;
+      padding: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .75);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .93), rgba(255, 255, 255, .72)),
+        linear-gradient(90deg, rgba(35, 88, 216, .14), rgba(13, 139, 104, .09));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      letter-spacing: 0;
+      line-height: 1.25;
+    }
+
+    .subtitle {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 96px);
+      gap: 8px;
+    }
+
+    .hero-stat {
+      min-height: 78px;
+      padding: 11px;
+      border: 1px solid rgba(22, 32, 42, .1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .84);
+      text-align: center;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .hero-stat span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .78);
+      margin-bottom: 18px;
+      box-shadow: 0 10px 28px rgba(23, 32, 42, .08);
+    }
+
+    .tab {
+      min-width: 144px;
+      min-height: 44px;
+      padding: 9px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .tab.active {
+      color: white;
+      background: var(--ink);
+      box-shadow: 0 8px 18px rgba(22, 32, 42, .2);
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .sheet {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .sheet-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, #ffffff, #f4f8fc);
+      font-weight: 900;
+    }
+
+    .sheet-title span:last-child {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 11px 12px;
+      vertical-align: top;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      background: var(--head);
+      color: #1f2a37;
+      font-size: 13px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    tbody tr {
+      border-left: 7px solid var(--group-color, var(--blue));
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fbfdff;
+    }
+
+    tbody tr:hover {
+      background: var(--group-soft, var(--soft-blue));
+    }
+
+    td.term {
+      font-weight: 900;
+      font-size: 17px;
+      line-height: 1.28;
+    }
+
+    .meaning {
+      font-weight: 800;
+      color: #263445;
+    }
+
+    .merged-cell {
+      vertical-align: middle;
+      background: var(--group-soft, #f8fafc);
+    }
+
+    .merged-cell.meaning {
+      color: #1f2a37;
+      font-size: 15px;
+    }
+
+    .pos {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      min-height: 28px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      color: white;
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .25);
+    }
+
+    .group-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 70px;
+      min-height: 30px;
+      padding: 4px 10px;
+      border: 1px solid color-mix(in srgb, var(--group-color) 42%, white);
+      border-radius: 8px;
+      background: var(--group-soft);
+      color: var(--group-color);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .mobile-vocab {
+      display: none;
+    }
+
+    .mobile-vocab-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-vocab-card {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(23, 32, 42, .08);
+    }
+
+    .mobile-vocab-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--group-color, var(--blue));
+    }
+
+    .mobile-vocab-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-left: 4px;
+    }
+
+    .mobile-vocab-term {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.18;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .mobile-vocab-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-field {
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--group-soft, #f8fafc);
+    }
+
+    .mobile-field span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 2px;
+    }
+
+    .mobile-field strong {
+      display: block;
+      overflow-wrap: anywhere;
+    }
+
+    .conj {
+      background: var(--blue);
+    }
+
+    .prep {
+      background: var(--green);
+    }
+
+    .adv {
+      background: var(--orange);
+    }
+
+    .inf {
+      background: #6d4cc2;
+    }
+
+    .pattern {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: #243447;
+    }
+
+    .hint-line {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 16px 0 0;
+    }
+
+    .hint-card {
+      min-height: 86px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      font-size: 13px;
+      box-shadow: 0 10px 26px rgba(23, 32, 42, .08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hint-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .hint-card::before,
+    .category-card::before,
+    .problem::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--accent, var(--blue));
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+
+    .category-card {
+      position: relative;
+      min-height: 80px;
+      padding: 12px 12px 12px 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 10px 26px rgba(23, 32, 42, .08);
+    }
+
+    .category-card strong {
+      display: block;
+      color: var(--accent);
+      font-size: 15px;
+    }
+
+    .category-card span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .practice-layout {
+      display: grid;
+      gap: 16px;
+    }
+
+    .flash-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .flash-card {
+      min-height: 410px;
+      display: grid;
+      align-content: space-between;
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .95), rgba(255, 255, 255, .82)),
+        var(--flash-soft, var(--soft-blue));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flash-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 7px;
+      background: var(--flash-color, var(--blue));
+    }
+
+    .flash-kicker {
+      color: var(--flash-color, var(--blue));
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .flash-term {
+      margin: 4px 0 0;
+      font-size: 44px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .flash-prompt {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .flash-question {
+      margin: 18px 0 0;
+      padding: 14px 16px;
+      border: 1px solid color-mix(in srgb, var(--flash-color, var(--blue)) 38%, var(--line));
+      border-radius: 8px;
+      background: var(--flash-soft, var(--soft-blue));
+      color: var(--flash-color, var(--blue));
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .flash-answer {
+      display: grid;
+      gap: 10px;
+    }
+
+    .answer-box {
+      min-height: 92px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .82);
+      animation: rise .18s ease-out;
+    }
+
+    .answer-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 7px;
+    }
+
+    .answer-box strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.22;
+      overflow-wrap: anywhere;
+    }
+
+    .flash-answer .pos {
+      min-width: 132px;
+      min-height: 50px;
+      padding: 9px 18px;
+      color: #fff;
+      font-size: 25px;
+      line-height: 1.15;
+    }
+
+    .flash-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .flash-button {
+      min-height: 42px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .flash-button.primary {
+      color: #fff;
+      border-color: var(--flash-color, var(--blue));
+      background: var(--flash-color, var(--blue));
+    }
+
+    .flash-side {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .9);
+      box-shadow: var(--shadow);
+    }
+
+    .flash-side h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .flash-side ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .problem {
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .problem-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, var(--problem-soft, #fbfcfd), #fff 68%);
+    }
+
+    .problem-head h2 {
+      margin: 0;
+      font-size: 13px;
+      letter-spacing: 0;
+      color: var(--problem-color, var(--blue));
+      text-transform: uppercase;
+    }
+
+    .problem-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 8px;
+    }
+
+    .problem-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--problem-color, var(--blue));
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .question {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .blank {
+      display: inline-block;
+      min-width: 118px;
+      min-height: 1.25em;
+      padding: 0 8px 1px;
+      border-bottom: 3px solid var(--problem-color, var(--blue));
+      color: var(--problem-color, var(--blue));
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .choice {
+      min-height: 52px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(23, 32, 42, .06);
+      transition: transform .14s ease, border-color .14s ease, background .14s ease, box-shadow .14s ease;
+    }
+
+    .choice:hover {
+      transform: translateY(-1px);
+      border-color: var(--problem-color, #8ea0b4);
+      box-shadow: 0 12px 24px rgba(23, 32, 42, .1);
+    }
+
+    .choice.selected {
+      border-color: var(--problem-color, var(--blue));
+      background: var(--problem-soft, var(--soft-blue));
+    }
+
+    .choice.correct {
+      border-color: var(--green);
+      background: var(--soft-green);
+    }
+
+    .choice.wrong {
+      border-color: var(--red);
+      background: var(--soft-red);
+    }
+
+    .solution {
+      display: none;
+      padding: 14px 16px 16px;
+      background: linear-gradient(180deg, #fff, #f8fafc);
+    }
+
+    .solution.visible {
+      display: block;
+    }
+
+    .steps {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: steps;
+    }
+
+    .step {
+      display: none;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .step.question-step {
+      background: var(--problem-soft, #f8fafc);
+      border-color: color-mix(in srgb, var(--problem-color, var(--blue)) 38%, var(--line));
+    }
+
+    .step.answer-step strong:first-child::after {
+      content: " answer";
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .step.visible {
+      display: grid;
+      animation: rise .18s ease-out;
+    }
+
+    .step::before {
+      counter-increment: steps;
+      content: counter(steps);
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--problem-color, var(--ink));
+      color: white;
+      font-weight: 900;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .step.good {
+      border-color: rgba(15, 122, 95, .45);
+      background: var(--soft-green);
+    }
+
+    .step.bad {
+      border-color: rgba(183, 53, 53, .45);
+      background: var(--soft-red);
+    }
+
+    .result {
+      display: none;
+      margin-top: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-weight: 900;
+    }
+
+    .result.visible {
+      display: block;
+    }
+
+    .result.good {
+      border-color: rgba(15, 122, 95, .45);
+      background: var(--soft-green);
+      color: var(--green);
+    }
+
+    .result.bad {
+      border-color: rgba(183, 53, 53, .45);
+      background: var(--soft-red);
+      color: var(--red);
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .small-button {
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .small-button:hover {
+      border-color: var(--problem-color, var(--blue));
+      background: var(--problem-soft, var(--soft-blue));
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 850px) {
+      .page {
+        padding: 14px;
+      }
+
+      header,
+      .sheet-title,
+      .controls {
+        display: grid;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats,
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      table {
+        min-width: 900px;
+      }
+
+      .sheet {
+        overflow-x: auto;
+      }
+
+      .hint-line,
+      .flash-layout,
+      .choices {
+        grid-template-columns: 1fr;
+      }
+
+      .flash-answer {
+        grid-template-columns: 1fr;
+      }
+
+      .tab {
+        min-width: 0;
+        flex: 1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 10px;
+      }
+
+      header {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .hero-stats,
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        display: none;
+      }
+
+      .tabs {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tab {
+        flex: 0 0 auto;
+        min-width: 118px;
+        padding: 9px 12px;
+        white-space: nowrap;
+      }
+
+      .category-grid,
+      .hint-line {
+        gap: 8px;
+      }
+
+      .sheet {
+        display: none;
+      }
+
+      .mobile-vocab {
+        display: block;
+      }
+
+      .flash-card {
+        min-height: 360px;
+        padding: 18px;
+      }
+
+      .flash-term {
+        font-size: 34px;
+      }
+
+      .flash-question {
+        font-size: 18px;
+      }
+
+      .answer-box strong {
+        font-size: 22px;
+      }
+
+      .flash-answer .pos {
+        min-height: 46px;
+        font-size: 22px;
+      }
+
+      .question {
+        font-size: 17px;
+      }
+
+      .problem-head,
+      .choices,
+      .solution {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .step {
+        grid-template-columns: 30px 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <h1>接続詞・前置詞・接続副詞 TOEIC頻出語彙</h1>
+        <p class="subtitle">元PDFの表をそのまま学習の中心にして、空欄問題は別タブで段階的に確認します。</p>
+      </div>
+      <div class="hero-stats" aria-label="教材サマリー">
+        <div class="hero-stat"><strong>18</strong><span>頻出表現</span></div>
+        <div class="hero-stat"><strong>6</strong><span>意味カテゴリ</span></div>
+        <div class="hero-stat"><strong>9</strong><span>解説ステップ</span></div>
+      </div>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="教材タブ">
+      <button class="tab active" role="tab" aria-selected="true" data-tab="table">語彙表</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="flash">フラッシュカード</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="practice">練習問題</button>
+    </div>
+
+    <section id="table" class="panel active" role="tabpanel">
+      <div class="category-grid" id="categoryGrid" aria-label="意味カテゴリー"></div>
+
+      <div class="sheet">
+        <div class="sheet-title">
+          <span>語彙・意味・品詞・文構造</span>
+          <span>空欄直後の形でまず品詞を決める</span>
+        </div>
+        <table aria-label="TOEIC頻出語彙表">
+          <thead>
+            <tr>
+              <th style="width: 13%">カテゴリー</th>
+              <th style="width: 25%">語彙</th>
+              <th style="width: 20%">意味</th>
+              <th style="width: 13%">品詞</th>
+              <th style="width: 29%">文構造</th>
+            </tr>
+          </thead>
+          <tbody id="vocabRows"></tbody>
+        </table>
+      </div>
+
+      <div class="mobile-vocab" aria-label="スマホ用語彙カード">
+        <div class="mobile-vocab-list" id="mobileVocabList"></div>
+      </div>
+
+      <div class="hint-line" aria-label="解法メモ">
+        <div class="hint-card" style="--accent: var(--blue)"><strong>接続詞</strong>後ろに S V が来る。節と節をつなぐ。</div>
+        <div class="hint-card" style="--accent: var(--green)"><strong>前置詞</strong>後ろに名詞・名詞句が来る。</div>
+        <div class="hint-card" style="--accent: var(--orange)"><strong>副詞</strong>文頭や文末で、文全体をつなぐ。</div>
+        <div class="hint-card" style="--accent: var(--violet)"><strong>不定詞</strong>後ろに動詞の原形が来る。</div>
+      </div>
+    </section>
+
+    <section id="flash" class="panel" role="tabpanel">
+      <div class="flash-layout">
+        <article class="flash-card" id="flashCard" aria-live="polite">
+          <div>
+            <div class="flash-kicker" id="flashKicker">Random card</div>
+            <h2 class="flash-term" id="flashTerm">Loading...</h2>
+            <p class="flash-prompt">質問に声で答えてから、めくって確認します。</p>
+            <div class="flash-question" id="flashQuestion">品詞は？</div>
+          </div>
+
+          <div class="flash-answer" id="flashAnswer"></div>
+
+          <div class="flash-actions">
+            <button class="flash-button primary" id="showFlashAnswer">めくる</button>
+            <button class="flash-button" id="nextFlashCard">次のカード</button>
+            <button class="flash-button" id="shuffleFlashCards">シャッフル</button>
+          </div>
+        </article>
+
+        <aside class="flash-side">
+          <h2>答えること</h2>
+          <ul>
+            <li>1. 日本語の意味</li>
+            <li>2. 品詞: 接続詞 / 前置詞 / 接続副詞 / 不定詞</li>
+            <li>3. 後ろに続く形: S V / 名詞 / 文全体 / 動詞の原形</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="practice" class="panel" role="tabpanel">
+      <div class="practice-layout" id="practiceList"></div>
+    </section>
+  </div>
+
+  <script>
+    const vocab = [
+      { term: "although / even though", meaning: "にもかかわらず、だけれど", pos: "接続詞", pattern: "〜 S V, S V", group: "逆接" },
+      { term: "despite", meaning: "にもかかわらず、だけれど", pos: "前置詞", pattern: "〜 名, S V", group: "逆接" },
+      { term: "nevertheless", meaning: "にもかかわらず、だけれど", pos: "副詞", pattern: "〜, S V.", group: "逆接" },
+      { term: "because / since / as", meaning: "なので", pos: "接続詞", pattern: "〜 S V, S V", group: "理由" },
+      { term: "because of / due to", meaning: "なので", pos: "前置詞", pattern: "〜 名, S V", group: "理由" },
+      { term: "therefore", meaning: "なので", pos: "副詞", pattern: "〜, S V.", group: "理由" },
+      { term: "while", meaning: "あいだ", pos: "接続詞", pattern: "〜 S V, S V", group: "時間" },
+      { term: "during", meaning: "あいだ", pos: "前置詞", pattern: "〜 名, S V", group: "時間" },
+      { term: "instead of", meaning: "かわりに", pos: "前置詞", pattern: "〜 名, S V", group: "代替" },
+      { term: "instead", meaning: "かわりに", pos: "副詞", pattern: "〜, S V（文頭） / S V, 〜（文末）", group: "代替" },
+      { term: "unless", meaning: "でなければ", pos: "接続詞", pattern: "〜 S V, S V", group: "条件" },
+      { term: "without", meaning: "でなければ", pos: "前置詞", pattern: "〜 名, S V", group: "条件" },
+      { term: "otherwise", meaning: "でなければ", pos: "副詞", pattern: "〜, S V.", group: "条件" },
+      { term: "so that / in order that", meaning: "するために", pos: "接続詞", pattern: "S V 〜 S V / 〜 S V, S V", group: "目的" },
+      { term: "so as to / in order to do", meaning: "するために", pos: "不定詞", pattern: "〜 V（原形）", group: "目的" },
+      { term: "as long as", meaning: "する限り", pos: "接続詞", pattern: "〜 S V, S V", group: "条件" },
+      { term: "now that", meaning: "今では〜なので", pos: "接続詞", pattern: "〜 S V, S V", group: "理由" },
+      { term: "once", meaning: "一旦〜すると", pos: "接続詞", pattern: "〜 S V, S V", group: "時間" }
+    ];
+
+    const problems = [
+      {
+        sentence: "_____ the heavy snow, all flights were canceled.",
+        choices: ["Although", "Despite", "Nevertheless", "Because"],
+        answer: "Despite",
+        afterBlank: "the heavy snow",
+        structure: "名詞句",
+        allowed: "前置詞",
+        posChoices: "前置詞として使える選択肢は Despite のみ。",
+        candidateChoices: "Despite",
+        group: "逆接",
+        meaningNeed: "にもかかわらず",
+        meaningQuestion: "大雪（？）、すべての便が欠航になった。",
+        meaningAnswer: "大雪「にもかかわらず」、すべての便が欠航になった。",
+        translation: "大雪にもかかわらず、すべての便が欠航になった。",
+        eliminate: "Although / Because は後ろに S V が必要。Nevertheless は副詞なので、直後に名詞だけを置けない。",
+        final: "直後が名詞句なので前置詞に絞る。意味は「大雪にもかかわらず」なので despite。"
+      },
+      {
+        sentence: "_____ sales increased, the company hired more staff.",
+        choices: ["Because of", "Because", "Therefore", "During"],
+        answer: "Because",
+        afterBlank: "sales increased",
+        structure: "S V",
+        allowed: "接続詞",
+        posChoices: "接続詞として使える選択肢は Because のみ。",
+        candidateChoices: "Because",
+        group: "理由",
+        meaningNeed: "なので",
+        meaningQuestion: "売上が伸びた（？）、その会社はより多くのスタッフを雇った。",
+        meaningAnswer: "売上が伸びた「ので」、その会社はより多くのスタッフを雇った。",
+        translation: "売上が伸びたので、その会社はより多くのスタッフを雇った。",
+        eliminate: "Because of / During は前置詞なので後ろは名詞。Therefore は副詞なので、空欄直後に S V を直接続けない。",
+        final: "直後が S V なので接続詞。意味は「売上が伸びたので」だから because。"
+      },
+      {
+        sentence: "Please confirm your reservation today; _____, your seat may be released.",
+        choices: ["unless", "without", "otherwise", "instead of"],
+        answer: "otherwise",
+        afterBlank: "your seat may be released",
+        structure: "S V の文",
+        allowed: "副詞",
+        posChoices: "接続副詞として使える選択肢は otherwise のみ。",
+        candidateChoices: "otherwise",
+        group: "条件",
+        meaningNeed: "そうでなければ",
+        meaningQuestion: "本日中に予約を確認してください。（？）、席が解放される可能性があります。",
+        meaningAnswer: "本日中に予約を確認してください。「そうでなければ」、席が解放される可能性があります。",
+        translation: "本日中に予約を確認してください。そうでなければ、席が解放される可能性があります。",
+        eliminate: "Unless は接続詞だが、この位置ではセミコロン後に文全体をつなぐ副詞が自然。Without / instead of は後ろに名詞が必要。",
+        final: "セミコロン後で文全体をつなぐ形。意味は「そうでなければ」なので otherwise。"
+      },
+      {
+        sentence: "The team worked late _____ finish the proposal.",
+        choices: ["so that", "in order to", "because of", "while"],
+        answer: "in order to",
+        afterBlank: "finish",
+        structure: "動詞の原形",
+        allowed: "不定詞",
+        posChoices: "不定詞として使える選択肢は in order to のみ。",
+        candidateChoices: "in order to",
+        group: "目的",
+        meaningNeed: "するために",
+        meaningQuestion: "チームは提案書を終える（？）、遅くまで働いた。",
+        meaningAnswer: "チームは提案書を終える「ために」、遅くまで働いた。",
+        translation: "チームは提案書を終えるために遅くまで働いた。",
+        eliminate: "So that / while は後ろに S V が必要。Because of は後ろに名詞が必要。",
+        final: "直後が動詞の原形 finish なので in order to。意味も「提案書を終えるために」。"
+      },
+      {
+        sentence: "_____ the training session, employees practiced using the new software.",
+        choices: ["While", "During", "Therefore", "Once"],
+        answer: "During",
+        afterBlank: "the training session",
+        structure: "名詞句",
+        allowed: "前置詞",
+        posChoices: "前置詞として使える選択肢は During のみ。",
+        candidateChoices: "During",
+        group: "時間",
+        meaningNeed: "あいだ",
+        meaningQuestion: "（？）研修、従業員は新しいソフトウェアの使い方を練習した。",
+        meaningAnswer: "「研修中」、従業員は新しいソフトウェアの使い方を練習した。",
+        translation: "研修中、従業員は新しいソフトウェアの使い方を練習した。",
+        eliminate: "While / Once は接続詞なので後ろに S V が必要。Therefore は副詞で、直後に名詞だけは置けない。",
+        final: "直後が名詞句なので前置詞。意味は「研修のあいだ」なので during。"
+      },
+      {
+        sentence: "_____ you submit the receipt, we cannot reimburse the expense.",
+        choices: ["Without", "Unless", "Otherwise", "Instead of"],
+        answer: "Unless",
+        afterBlank: "you submit",
+        structure: "S V",
+        allowed: "接続詞",
+        posChoices: "接続詞として使える選択肢は Unless のみ。",
+        candidateChoices: "Unless",
+        group: "条件",
+        meaningNeed: "でなければ",
+        meaningQuestion: "領収書を提出する（？）、その費用を払い戻すことはできません。",
+        meaningAnswer: "領収書を提出し「なければ」、その費用を払い戻すことはできません。",
+        translation: "領収書を提出しなければ、その費用を払い戻すことはできません。",
+        eliminate: "Without / instead of は前置詞なので後ろは名詞。Otherwise は副詞で、この空欄直後に S V を直接続ける形ではない。",
+        final: "直後が S V なので接続詞。意味は「領収書を提出しなければ」なので unless。"
+      },
+      {
+        sentence: "_____ the product was expensive, many customers purchased it.",
+        choices: ["Although", "Because", "Despite", "Therefore"],
+        answer: "Although",
+        afterBlank: "the product was expensive",
+        structure: "S V",
+        allowed: "接続詞",
+        posChoices: "接続詞として使える選択肢は Although / Because。",
+        candidateChoices: "Although / Because",
+        group: "逆接",
+        meaningNeed: "にもかかわらず、けれど",
+        meaningQuestion: "その商品は高かった（？）、多くの顧客がそれを購入した。",
+        meaningAnswer: "その商品は高かった「けれど」、多くの顧客がそれを購入した。",
+        translation: "その商品は高かったけれど、多くの顧客がそれを購入した。",
+        eliminate: "Despite は前置詞なので後ろは名詞。Therefore は接続副詞なので、この空欄直後に S V を直接続けない。",
+        final: "直後が S V なので接続詞に絞る。Although / Because が残るが、文意は逆接なので although。"
+      },
+      {
+        sentence: "_____ the system restarts, do not press any keys.",
+        choices: ["While", "Once", "During", "Instead"],
+        answer: "While",
+        afterBlank: "the system restarts",
+        structure: "S V",
+        allowed: "接続詞",
+        posChoices: "接続詞として使える選択肢は While / Once。",
+        candidateChoices: "While / Once",
+        group: "時間",
+        meaningNeed: "あいだ",
+        meaningQuestion: "システムが再起動している（？）、どのキーも押さないでください。",
+        meaningAnswer: "システムが再起動している「あいだ」、どのキーも押さないでください。",
+        translation: "システムが再起動しているあいだ、どのキーも押さないでください。",
+        eliminate: "During は前置詞なので後ろは名詞。Instead は接続副詞なので、この空欄直後に S V を直接続けない。",
+        final: "直後が S V なので接続詞に絞る。While / Once が残るが、文意は「あいだ」なので while。"
+      }
+    ];
+
+    const posClass = {
+      "接続詞": "conj",
+      "前置詞": "prep",
+      "副詞": "adv",
+      "不定詞": "inf"
+    };
+
+    const groupStyle = {
+      "逆接": { color: "#be3c74", soft: "#fff0f7", label: "contrast" },
+      "理由": { color: "#2358d8", soft: "#eef4ff", label: "reason" },
+      "時間": { color: "#0c86a0", soft: "#eafaff", label: "time" },
+      "代替": { color: "#c0691b", soft: "#fff4e8", label: "alternative" },
+      "条件": { color: "#0d8b68", soft: "#ecf8f3", label: "condition" },
+      "目的": { color: "#6b4fd2", soft: "#f3f0ff", label: "purpose" }
+    };
+
+    function styleVars(group) {
+      const style = groupStyle[group];
+      return `--group-color:${style.color};--group-soft:${style.soft};--accent:${style.color};--problem-color:${style.color};--problem-soft:${style.soft}`;
+    }
+
+    function displayPos(pos) {
+      return pos === "副詞" ? "接続副詞" : pos;
+    }
+
+    function shuffle(items) {
+      return [...items].sort(() => Math.random() - 0.5);
+    }
+
+    const flashVocab = vocab.flatMap(item =>
+      item.term.split(/\s+\/\s+/).map(term => ({ ...item, term }))
+    );
+
+    let flashOrder = shuffle(flashVocab.map((_, index) => index));
+    let flashCursor = 0;
+    let flashStep = 0;
+
+    function currentFlashItem() {
+      return flashVocab[flashOrder[flashCursor]];
+    }
+
+    function flashStages(item) {
+      return [
+        { question: "意味は？", label: "意味", answer: item.meaning },
+        { question: "品詞は？", label: "品詞", answer: `<span class="pos ${posClass[item.pos]}">${displayPos(item.pos)}</span>` },
+        { question: "後ろに続く形は？", label: "後ろに続く文構造", answer: item.pattern },
+      ];
+    }
+
+    function renderFlashStage() {
+      const item = currentFlashItem();
+      const stages = flashStages(item);
+      const answerHtml = stages.slice(0, flashStep).map(stage => `
+        <div class="answer-box"><span>${stage.label}</span><strong>${stage.answer}</strong></div>
+      `).join("");
+      document.querySelector("#flashAnswer").innerHTML = answerHtml;
+      document.querySelector("#flashQuestion").textContent = flashStep < stages.length
+        ? stages[flashStep].question
+        : "全部言えた？次のカードへ";
+      document.querySelector("#showFlashAnswer").textContent = flashStep < stages.length ? "めくる" : "次のカード";
+    }
+
+    function renderFlashCard() {
+      if (flashCursor >= flashOrder.length) {
+        flashOrder = shuffle(flashVocab.map((_, index) => index));
+        flashCursor = 0;
+      }
+      flashStep = 0;
+      const item = currentFlashItem();
+      const style = groupStyle[item.group];
+      const card = document.querySelector("#flashCard");
+      card.style.setProperty("--flash-color", style.color);
+      card.style.setProperty("--flash-soft", style.soft);
+      document.querySelector("#flashKicker").textContent = `${item.group} / ${style.label}`;
+      document.querySelector("#flashTerm").textContent = item.term;
+      renderFlashStage();
+    }
+
+    function renderCategories() {
+      const groups = Object.keys(groupStyle);
+      document.querySelector("#categoryGrid").innerHTML = groups.map(group => {
+        const count = vocab.filter(item => item.group === group).length;
+        const meanings = [...new Set(vocab.filter(item => item.group === group).map(item => item.meaning))].join(" / ");
+        return `
+          <div class="category-card" style="--accent:${groupStyle[group].color}">
+            <strong>${group}</strong>
+            <span>${groupStyle[group].label}・${count}語・${meanings}</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function tableRows() {
+      const groupOrder = Object.keys(groupStyle);
+      const items = [...vocab].sort((a, b) => {
+        const groupDiff = groupOrder.indexOf(a.group) - groupOrder.indexOf(b.group);
+        if (groupDiff !== 0) return groupDiff;
+        if (a.meaning !== b.meaning) return a.meaning.localeCompare(b.meaning, "ja");
+        return 0;
+      });
+
+      return items.map((item, index) => {
+        const firstInGroup = index === 0 || items[index - 1].group !== item.group;
+        const firstInMeaning = firstInGroup || items[index - 1].meaning !== item.meaning;
+        const groupSpan = firstInGroup ? items.filter(other => other.group === item.group).length : 0;
+        const meaningSpan = firstInMeaning
+          ? items.filter(other => other.group === item.group && other.meaning === item.meaning).length
+          : 0;
+        return { item, firstInGroup, firstInMeaning, groupSpan, meaningSpan };
+      });
+    }
+
+    function renderTable() {
+      const rows = tableRows();
+      document.querySelector("#vocabRows").innerHTML = rows.map(row => `
+        <tr style="${styleVars(row.item.group)}">
+          ${row.firstInGroup ? `<td class="merged-cell" rowspan="${row.groupSpan}"><span class="group-badge">${row.item.group}</span></td>` : ""}
+          <td class="term">${row.item.term}</td>
+          ${row.firstInMeaning ? `<td class="merged-cell meaning" rowspan="${row.meaningSpan}">${row.item.meaning}</td>` : ""}
+          <td><span class="pos ${posClass[row.item.pos]}">${row.item.pos}</span></td>
+          <td class="pattern">${row.item.pattern}</td>
+        </tr>
+      `).join("");
+      document.querySelector("#mobileVocabList").innerHTML = rows.map(row => `
+        <article class="mobile-vocab-card" style="${styleVars(row.item.group)}">
+          <div class="mobile-vocab-head">
+            <span class="group-badge">${row.item.group}</span>
+            <span class="pos ${posClass[row.item.pos]}">${row.item.pos}</span>
+          </div>
+          <h2 class="mobile-vocab-term">${row.item.term}</h2>
+          <div class="mobile-vocab-grid">
+            <div class="mobile-field"><span>意味</span><strong>${row.item.meaning}</strong></div>
+            <div class="mobile-field"><span>文構造</span><strong class="pattern">${row.item.pattern}</strong></div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function practiceSteps(problem) {
+      const steps = [
+        { type: "question", title: "空欄直後の形は？", body: "" },
+        { type: "answer", title: "形", body: `「${problem.afterBlank}」なので <b>${problem.structure}</b>。` },
+        { type: "question", title: "どの品詞？", body: "" },
+        { type: "answer", title: "品詞", body: `<b>${displayPos(problem.allowed)}</b>` },
+        { type: "question", title: `どの選択肢が${displayPos(problem.allowed)}？`, body: "" },
+        { type: "answer", title: "候補", body: `<b>${problem.candidateChoices}</b><br><span class="note">補足: ${problem.eliminate}</span>` }
+      ];
+
+      if (problem.candidateChoices.includes(" / ")) {
+        steps.push(
+        { type: "question", title: "文意に合うのは？", body: "" },
+        { type: "answer", title: "意味確認", body: problem.meaningQuestion },
+        { type: "answer", title: "判断", body: `${problem.meaningAnswer}<br>したがって正解は <b>${problem.answer}</b>。` }
+        );
+      }
+
+      return steps;
+    }
+
+    function renderPractice() {
+      document.querySelector("#practiceList").innerHTML = problems.map((problem, index) => `
+        <article class="problem" data-index="${index}" style="${styleVars(problem.group)}">
+          <div class="problem-head">
+            <div class="problem-meta">
+              <span class="problem-chip">${problem.group}</span>
+              <h2>Question ${index + 1}</h2>
+            </div>
+            <p class="question">${problem.sentence.replace("_____", '<span class="blank"></span>')}</p>
+          </div>
+          <div class="choices">
+            ${problem.choices.map(choice => `<button class="choice" data-choice="${choice}">${choice}</button>`).join("")}
+          </div>
+          <div class="solution" aria-live="polite">
+            <ol class="steps">
+              ${practiceSteps(problem).map(step => `
+                <li class="step ${step.type}-step"><div><strong>${step.title}</strong>${step.body}</div></li>
+              `).join("")}
+            </ol>
+            <div class="result"></div>
+            <div class="controls">
+              <span class="note">選択肢をクリックするたびに、解説が1ステップずつ進みます。</span>
+              <button class="small-button" data-reset="${index}">この問題をリセット</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function switchTab(tabName) {
+      document.querySelectorAll(".tab").forEach(tab => {
+        const active = tab.dataset.tab === tabName;
+        tab.classList.toggle("active", active);
+        tab.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      document.querySelectorAll(".panel").forEach(panel => {
+        panel.classList.toggle("active", panel.id === tabName);
+      });
+    }
+
+    function resetProblem(problemEl) {
+      problemEl.dataset.step = "0";
+      problemEl.querySelector(".blank").textContent = "";
+      problemEl.querySelector(".solution").classList.remove("visible");
+      problemEl.querySelectorAll(".choice").forEach(choice => {
+        choice.classList.remove("selected", "correct", "wrong");
+      });
+      problemEl.querySelectorAll(".step").forEach(step => {
+        step.classList.remove("visible", "good", "bad");
+      });
+      const result = problemEl.querySelector(".result");
+      result.className = "result";
+      result.textContent = "";
+    }
+
+    function selectChoice(button) {
+      const problemEl = button.closest(".problem");
+      const problem = problems[Number(problemEl.dataset.index)];
+      const selected = button.dataset.choice;
+      const correct = selected === problem.answer;
+      const totalSteps = practiceSteps(problem).length;
+      const nextStep = Math.min(Number(problemEl.dataset.step || "0") + 1, totalSteps);
+      problemEl.dataset.step = String(nextStep);
+
+      problemEl.querySelector(".solution").classList.add("visible");
+      problemEl.querySelector(".blank").textContent = selected;
+      problemEl.querySelectorAll(".choice").forEach(choice => {
+        choice.classList.toggle("selected", choice === button);
+        choice.classList.toggle("correct", choice.dataset.choice === problem.answer && nextStep === 4);
+        choice.classList.toggle("wrong", choice === button && !correct && nextStep === 4);
+      });
+
+      problemEl.querySelectorAll(".step").forEach((step, index) => {
+        const visible = index < nextStep;
+        step.classList.toggle("visible", visible);
+      });
+
+      const result = problemEl.querySelector(".result");
+      const showResult = nextStep === totalSteps;
+      result.classList.toggle("visible", showResult);
+      result.classList.toggle("good", showResult && correct);
+      result.classList.toggle("bad", showResult && !correct);
+      result.textContent = showResult
+        ? correct
+          ? `正解。${problem.final}`
+          : `不正解。あなたの選択は ${selected}。正解は ${problem.answer}。${problem.final}`
+        : "";
+    }
+
+    document.addEventListener("click", event => {
+      const tab = event.target.closest(".tab");
+      if (tab) {
+        switchTab(tab.dataset.tab);
+        return;
+      }
+
+      if (event.target.closest("#showFlashAnswer")) {
+        const stages = flashStages(currentFlashItem());
+        if (flashStep >= stages.length) {
+          flashCursor += 1;
+          renderFlashCard();
+        } else {
+          flashStep += 1;
+          renderFlashStage();
+        }
+        return;
+      }
+
+      if (event.target.closest("#nextFlashCard")) {
+        flashCursor += 1;
+        renderFlashCard();
+        return;
+      }
+
+      if (event.target.closest("#shuffleFlashCards")) {
+        flashOrder = shuffle(flashVocab.map((_, index) => index));
+        flashCursor = 0;
+        renderFlashCard();
+        return;
+      }
+
+      const choice = event.target.closest(".choice");
+      if (choice) {
+        selectChoice(choice);
+        return;
+      }
+
+      const reset = event.target.closest("[data-reset]");
+      if (reset) resetProblem(reset.closest(".problem"));
+    });
+
+    renderCategories();
+    renderTable();
+    renderFlashCard();
+    renderPractice();
+  </script>
+</body>
+</html>
