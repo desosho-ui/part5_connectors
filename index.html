@@ -77,6 +77,20 @@
       line-height: 1.25;
     }
 
+    .title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .credit {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .tabs {
       display: flex;
       gap: 8px;
@@ -317,6 +331,120 @@
       color: #243447;
     }
 
+    .pattern-button {
+      width: 100%;
+      min-height: 36px;
+      padding: 7px 9px;
+      border: 1px dashed color-mix(in srgb, var(--group-color, var(--blue)) 40%, var(--line));
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .72);
+      color: #243447;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      transition: background .14s ease, border-color .14s ease, transform .14s ease;
+    }
+
+    .pattern-button:hover {
+      transform: translateY(-1px);
+      border-color: var(--group-color, var(--blue));
+      background: var(--group-soft, var(--soft-blue));
+    }
+
+    .structure-example {
+      display: none;
+      position: fixed;
+      z-index: 40;
+      width: min(420px, calc(100vw - 24px));
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .97);
+      box-shadow: var(--shadow);
+    }
+
+    .structure-example.visible {
+      display: block;
+      animation: rise .18s ease-out;
+    }
+
+    .structure-example::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: -9px;
+      width: 16px;
+      height: 16px;
+      border-left: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .97);
+      transform: rotate(45deg);
+    }
+
+    .structure-example.left-tail::before {
+      left: auto;
+      right: -9px;
+      border-left: 0;
+      border-bottom: 0;
+      border-right: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+    }
+
+    .structure-example h2 {
+      margin: 0;
+      color: var(--example-color, var(--blue));
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .structure-example-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .structure-close {
+      min-height: 32px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .structure-close:hover {
+      border-color: var(--example-color, var(--blue));
+      background: color-mix(in srgb, var(--example-color, var(--blue)) 10%, white);
+    }
+
+    .structure-example p {
+      margin: 0;
+    }
+
+    .structure-example .example-en {
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .structure-example .example-ja {
+      margin-top: 8px;
+      color: #475569;
+      font-weight: 800;
+    }
+
+    .example-highlight {
+      padding: 1px 5px;
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--example-color, var(--blue)) 18%, white);
+      color: var(--example-color, var(--blue));
+      font-weight: 950;
+    }
+
     .hint-line {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -351,6 +479,232 @@
       background: var(--accent, var(--blue));
     }
 
+    .guide-shell {
+      display: grid;
+      gap: 16px;
+    }
+
+    .guide-type-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .guide-type-button {
+      min-height: 116px;
+      padding: 18px;
+      border: 1px solid color-mix(in srgb, var(--guide-color, var(--blue)) 30%, var(--line));
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .78)),
+        color-mix(in srgb, var(--guide-color, var(--blue)) 12%, white);
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      box-shadow: 0 14px 34px rgba(23, 32, 42, .09);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guide-type-button::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 7px;
+      background: var(--guide-color, var(--blue));
+    }
+
+    .guide-type-button.active {
+      color: white;
+      background: var(--guide-color, var(--blue));
+      border-color: var(--guide-color, var(--blue));
+      transform: translateY(-2px);
+    }
+
+    .guide-type-button strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .guide-type-button span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .guide-type-button.active span {
+      color: rgba(255, 255, 255, .86);
+    }
+
+    .guide-board {
+      min-height: 260px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .92);
+      box-shadow: var(--shadow);
+    }
+
+    .guide-empty {
+      display: grid;
+      min-height: 214px;
+      place-items: center;
+      color: var(--muted);
+      font-size: 24px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .guide-board-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .guide-board-head h2 {
+      margin: 0;
+      color: var(--guide-color, var(--blue));
+      font-size: 34px;
+      line-height: 1.1;
+    }
+
+    .guide-pattern-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .guide-pattern-button {
+      min-height: 132px;
+      padding: 18px;
+      border: 1px solid color-mix(in srgb, var(--guide-color, var(--blue)) 32%, var(--line));
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--guide-color, var(--blue)) 9%, white);
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .guide-pattern-button.active,
+    .guide-pattern-button:hover {
+      border-color: var(--guide-color, var(--blue));
+      background: color-mix(in srgb, var(--guide-color, var(--blue)) 16%, white);
+    }
+
+    .guide-pattern-label {
+      display: block;
+      color: var(--guide-color, var(--blue));
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .guide-pattern-main {
+      display: block;
+      margin-top: 8px;
+      font-size: 42px;
+      font-weight: 950;
+      line-height: 1.05;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .guide-example-panel {
+      display: none;
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid color-mix(in srgb, var(--guide-color, var(--blue)) 28%, var(--line));
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 16px 36px rgba(23, 32, 42, .1);
+    }
+
+    .guide-example-panel.visible {
+      display: block;
+      animation: rise .18s ease-out;
+    }
+
+    .guide-example-kicker {
+      color: var(--guide-color, var(--blue));
+      font-size: 17px;
+      font-weight: 950;
+    }
+
+    .guide-example-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .guide-close {
+      min-height: 34px;
+      padding: 6px 12px;
+      border: 1px solid color-mix(in srgb, var(--guide-color, var(--blue)) 34%, var(--line));
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--guide-color, var(--blue)) 8%, white);
+      color: var(--guide-color, var(--blue));
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .guide-close:hover {
+      background: var(--guide-color, var(--blue));
+      color: white;
+    }
+
+    .guide-example-en {
+      margin: 10px 0 0;
+      font-size: 27px;
+      font-weight: 950;
+      line-height: 1.35;
+    }
+
+    .guide-example-note {
+      margin: 7px 0 0;
+      color: #64748b;
+      font-size: 18px;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    .guide-example-ja {
+      margin: 10px 0 0;
+      color: #475569;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .guide-example-item {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .guide-example-head + .guide-example-item {
+      border-top: 0;
+    }
+
+    .guide-example-subtitle {
+      display: inline-flex;
+      padding: 3px 9px;
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--guide-color, var(--blue)) 10%, white);
+      color: var(--guide-color, var(--blue));
+      font-size: 15px;
+      font-weight: 950;
+    }
+
     .category-grid {
       display: flex;
       flex-wrap: wrap;
@@ -381,6 +735,34 @@
     .practice-layout {
       display: grid;
       gap: 16px;
+    }
+
+    .practice-toolbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .86);
+      box-shadow: 0 10px 26px rgba(23, 32, 42, .08);
+    }
+
+    .reset-all-button {
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 950;
+    }
+
+    .reset-all-button:hover {
+      background: #1748bd;
     }
 
     .flash-layout {
@@ -795,7 +1177,7 @@
     .result {
       display: none;
       margin-top: 10px;
-      padding: 12px;
+      padding: 14px 16px;
       border: 1px solid var(--line);
       border-radius: 8px;
       font-weight: 900;
@@ -807,14 +1189,54 @@
 
     .result.good {
       border-color: rgba(15, 122, 95, .45);
-      background: var(--soft-green);
+      background:
+        linear-gradient(135deg, rgba(13, 139, 104, .18), rgba(255, 255, 255, .7)),
+        var(--soft-green);
       color: var(--green);
+      box-shadow: 0 14px 30px rgba(13, 139, 104, .16);
     }
 
     .result.bad {
       border-color: rgba(183, 53, 53, .45);
       background: var(--soft-red);
       color: var(--red);
+    }
+
+    .result-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+
+    .result.good .result-title {
+      color: #087455;
+      font-size: 24px;
+    }
+
+    .result-answer {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 4px;
+      padding: 2px 8px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .78);
+      color: var(--ink);
+    }
+
+    .result-detail {
+      display: block;
+      color: #334155;
+      font-weight: 800;
+    }
+
+    .result-translation {
+      display: block;
+      margin-top: 8px;
+      color: #334155;
+      font-weight: 900;
     }
 
     .controls {
@@ -880,6 +1302,8 @@
       }
 
       .hint-line,
+      .guide-type-grid,
+      .guide-pattern-list,
       .flash-layout,
       .choices {
         grid-template-columns: 1fr;
@@ -908,6 +1332,10 @@
         font-size: 25px;
       }
 
+      .credit {
+        white-space: normal;
+      }
+
       .tabs {
         position: sticky;
         top: 0;
@@ -926,6 +1354,35 @@
       .category-grid,
       .hint-line {
         gap: 8px;
+      }
+
+      .guide-board {
+        padding: 16px;
+      }
+
+      .guide-type-button {
+        min-height: 112px;
+        padding: 15px;
+      }
+
+      .guide-type-button strong {
+        font-size: 26px;
+      }
+
+      .guide-board-head h2 {
+        font-size: 27px;
+      }
+
+      .guide-pattern-main {
+        font-size: 32px;
+      }
+
+      .guide-example-en {
+        font-size: 21px;
+      }
+
+      .guide-example-ja {
+        font-size: 18px;
       }
 
       .sheet {
@@ -987,18 +1444,42 @@
 <body>
   <div class="page">
     <header>
-      <div>
+      <div class="title-row">
         <h1>接続詞・前置詞・接続副詞 TOEIC頻出語彙</h1>
+        <span class="credit">Developed by Sho Nakai (Kansai University)</span>
       </div>
     </header>
 
     <div class="tabs" role="tablist" aria-label="教材タブ">
-      <button class="tab active" role="tab" aria-selected="true" data-tab="table">語彙表</button>
+      <button class="tab active" role="tab" aria-selected="true" data-tab="guide">文構造</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="table">語彙表</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="flash">フラッシュカード</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="practice">練習問題</button>
     </div>
 
-    <section id="table" class="panel active" role="tabpanel">
+    <section id="guide" class="panel active" role="tabpanel">
+      <div class="guide-shell">
+        <div class="guide-type-grid" aria-label="品詞別の文構造">
+          <button class="guide-type-button" type="button" style="--guide-color: var(--blue)" data-guide-type="conj">
+            <strong>接続詞</strong>
+          </button>
+          <button class="guide-type-button" type="button" style="--guide-color: var(--green)" data-guide-type="prep">
+            <strong>前置詞</strong>
+          </button>
+          <button class="guide-type-button" type="button" style="--guide-color: var(--orange)" data-guide-type="adv">
+            <strong>接続副詞</strong>
+          </button>
+          <button class="guide-type-button" type="button" style="--guide-color: var(--violet)" data-guide-type="inf">
+            <strong>不定詞</strong>
+          </button>
+        </div>
+        <div class="guide-board" id="guideBoard" aria-live="polite">
+          <div class="guide-empty">品詞をクリックすると、文構造が大きく表示されます。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="table" class="panel" role="tabpanel">
       <div class="category-grid" id="categoryGrid" aria-label="意味カテゴリー"></div>
 
       <div class="sheet">
@@ -1024,12 +1505,7 @@
         <div class="mobile-vocab-list" id="mobileVocabList"></div>
       </div>
 
-      <div class="hint-line" aria-label="解法メモ">
-        <div class="hint-card" style="--accent: var(--blue)"><strong>接続詞</strong>後ろに S V が来る。節と節をつなぐ。</div>
-        <div class="hint-card" style="--accent: var(--green)"><strong>前置詞</strong>後ろに名詞・名詞句が来る。</div>
-        <div class="hint-card" style="--accent: var(--orange)"><strong>副詞</strong>文頭や文末で、文全体をつなぐ。</div>
-        <div class="hint-card" style="--accent: var(--violet)"><strong>不定詞</strong>後ろに動詞の原形が来る。</div>
-      </div>
+      <div class="structure-example" id="structureExample" aria-live="polite"></div>
     </section>
 
     <section id="flash" class="panel" role="tabpanel">
@@ -1065,6 +1541,9 @@
     </section>
 
     <section id="practice" class="panel" role="tabpanel">
+      <div class="practice-toolbar">
+        <button class="reset-all-button" type="button" id="resetAllProblems">全ての設問をリセット</button>
+      </div>
       <div class="practice-layout" id="practiceList"></div>
     </section>
   </div>
@@ -1085,7 +1564,7 @@
       { term: "without", meaning: "でなければ", pos: "前置詞", pattern: "〜 名, S V", group: "条件" },
       { term: "otherwise", meaning: "でなければ", pos: "副詞", pattern: "〜, S V.", group: "条件" },
       { term: "so that / in order that", meaning: "するために", pos: "接続詞", pattern: "S V 〜 S V / 〜 S V, S V", group: "目的" },
-      { term: "so as to / in order to do", meaning: "するために", pos: "不定詞", pattern: "〜 V（原形）", group: "目的" },
+      { term: "so as to / in order to", meaning: "するために", pos: "不定詞", pattern: "〜 V（原形）", group: "目的" },
       { term: "as long as", meaning: "する限り", pos: "接続詞", pattern: "〜 S V, S V", group: "条件" },
       { term: "now that", meaning: "今では〜なので", pos: "接続詞", pattern: "〜 S V, S V", group: "理由" },
       { term: "once", meaning: "一旦〜すると", pos: "接続詞", pattern: "〜 S V, S V", group: "時間" }
@@ -1093,21 +1572,22 @@
 
     const problems = [
       {
-        sentence: "_____ the heavy snow, all flights were canceled.",
+        sentence: "_____ the tight deadline, the team completed the report.",
         choices: ["Although", "Despite", "Nevertheless", "Because"],
         answer: "Despite",
-        afterBlank: "the heavy snow",
+        afterBlank: "the tight deadline",
         structure: "名詞句",
         allowed: "前置詞",
         posChoices: "前置詞として使える選択肢は Despite のみ。",
         candidateChoices: "Despite",
         group: "逆接",
         meaningNeed: "にもかかわらず",
-        meaningQuestion: "大雪（？）、すべての便が欠航になった。",
-        meaningAnswer: "大雪「にもかかわらず」、すべての便が欠航になった。",
-        translation: "大雪にもかかわらず、すべての便が欠航になった。",
+        meaningQuestion: "厳しい締切（？）、チームは報告書を完成させた。",
+        meaningAnswer: "厳しい締切「にもかかわらず」、チームは報告書を完成させた。",
+        translation: "厳しい締切にもかかわらず、チームは報告書を完成させた。",
+        translationTarget: "にもかかわらず",
         eliminate: "Although / Because は後ろに S V が必要。Nevertheless は副詞なので、直後に名詞だけを置けない。",
-        final: "直後が名詞句なので前置詞に絞る。意味は「大雪にもかかわらず」なので despite。"
+        final: "直後が名詞句なので前置詞に絞る。意味は「厳しい締切にもかかわらず」なので despite。"
       },
       {
         sentence: "_____ sales increased, the company hired more staff.",
@@ -1123,6 +1603,7 @@
         meaningQuestion: "売上が伸びた（？）、その会社はより多くのスタッフを雇った。",
         meaningAnswer: "売上が伸びた「ので」、その会社はより多くのスタッフを雇った。",
         translation: "売上が伸びたので、その会社はより多くのスタッフを雇った。",
+        translationTarget: "ので",
         eliminate: "Because of / During は前置詞なので後ろは名詞。Therefore は副詞なので、空欄直後に S V を直接続けない。",
         final: "直後が S V なので接続詞。意味は「売上が伸びたので」だから because。"
       },
@@ -1130,8 +1611,8 @@
         sentence: "Please confirm your reservation today; _____, your seat may be released.",
         choices: ["unless", "without", "otherwise", "instead of"],
         answer: "otherwise",
-        afterBlank: "your seat may be released",
-        structure: "S V の文",
+        afterBlank: ", your seat may be released",
+        structure: "コンマ + S V（接続副詞, S V）",
         allowed: "副詞",
         posChoices: "接続副詞として使える選択肢は otherwise のみ。",
         candidateChoices: "otherwise",
@@ -1140,8 +1621,9 @@
         meaningQuestion: "本日中に予約を確認してください。（？）、席が解放される可能性があります。",
         meaningAnswer: "本日中に予約を確認してください。「そうでなければ」、席が解放される可能性があります。",
         translation: "本日中に予約を確認してください。そうでなければ、席が解放される可能性があります。",
-        eliminate: "Unless は接続詞だが、この位置ではセミコロン後に文全体をつなぐ副詞が自然。Without / instead of は後ろに名詞が必要。",
-        final: "セミコロン後で文全体をつなぐ形。意味は「そうでなければ」なので otherwise。"
+        translationTarget: "そうでなければ",
+        eliminate: "Unless は接続詞なので後ろに S V を直接続ける。ここは空欄の直後がコンマ + S V なので、接続副詞の形。Without / instead of は後ろに名詞が必要。",
+        final: "空欄直後がコンマ + S V なので接続副詞に絞る。意味は「そうでなければ」なので otherwise。"
       },
       {
         sentence: "The team worked late _____ finish the proposal.",
@@ -1157,6 +1639,7 @@
         meaningQuestion: "チームは提案書を終える（？）、遅くまで働いた。",
         meaningAnswer: "チームは提案書を終える「ために」、遅くまで働いた。",
         translation: "チームは提案書を終えるために遅くまで働いた。",
+        translationTarget: "ために",
         eliminate: "So that / while は後ろに S V が必要。Because of は後ろに名詞が必要。",
         final: "直後が動詞の原形 finish なので in order to。意味も「提案書を終えるために」。"
       },
@@ -1174,6 +1657,7 @@
         meaningQuestion: "（？）研修、従業員は新しいソフトウェアの使い方を練習した。",
         meaningAnswer: "「研修中」、従業員は新しいソフトウェアの使い方を練習した。",
         translation: "研修中、従業員は新しいソフトウェアの使い方を練習した。",
+        translationTarget: "研修中",
         eliminate: "While / Once は接続詞なので後ろに S V が必要。Therefore は副詞で、直後に名詞だけは置けない。",
         final: "直後が名詞句なので前置詞。意味は「研修のあいだ」なので during。"
       },
@@ -1191,6 +1675,7 @@
         meaningQuestion: "領収書を提出する（？）、その費用を払い戻すことはできません。",
         meaningAnswer: "領収書を提出し「なければ」、その費用を払い戻すことはできません。",
         translation: "領収書を提出しなければ、その費用を払い戻すことはできません。",
+        translationTarget: "なければ",
         eliminate: "Without / instead of は前置詞なので後ろは名詞。Otherwise は副詞で、この空欄直後に S V を直接続ける形ではない。",
         final: "直後が S V なので接続詞。意味は「領収書を提出しなければ」なので unless。"
       },
@@ -1208,14 +1693,15 @@
         meaningQuestion: "その商品は高かった（？）、多くの顧客がそれを購入した。",
         meaningAnswer: "その商品は高かった「けれど」、多くの顧客がそれを購入した。",
         translation: "その商品は高かったけれど、多くの顧客がそれを購入した。",
+        translationTarget: "けれど",
         eliminate: "Despite は前置詞なので後ろは名詞。Therefore は接続副詞なので、この空欄直後に S V を直接続けない。",
         final: "直後が S V なので接続詞に絞る。Although / Because が残るが、文意は逆接なので although。"
       },
       {
-        sentence: "_____ the system restarts, do not press any keys.",
+        sentence: "_____ the system is restarting, do not press any keys.",
         choices: ["While", "Once", "During", "Instead"],
         answer: "While",
-        afterBlank: "the system restarts",
+        afterBlank: "the system is restarting",
         structure: "S V",
         allowed: "接続詞",
         posChoices: "接続詞として使える選択肢は While / Once。",
@@ -1225,8 +1711,181 @@
         meaningQuestion: "システムが再起動している（？）、どのキーも押さないでください。",
         meaningAnswer: "システムが再起動している「あいだ」、どのキーも押さないでください。",
         translation: "システムが再起動しているあいだ、どのキーも押さないでください。",
+        translationTarget: "あいだ",
         eliminate: "During は前置詞なので後ろは名詞。Instead は接続副詞なので、この空欄直後に S V を直接続けない。",
         final: "直後が S V なので接続詞に絞る。While / Once が残るが、文意は「あいだ」なので while。"
+      },
+      {
+        sentence: "_____ a scheduling conflict, the seminar was postponed.",
+        choices: ["Due to", "Because", "Therefore", "Although"],
+        answer: "Due to",
+        afterBlank: "a scheduling conflict",
+        structure: "名詞句",
+        allowed: "前置詞",
+        posChoices: "前置詞として使える選択肢は Due to のみ。",
+        candidateChoices: "Due to",
+        group: "理由",
+        meaningNeed: "なので、のために",
+        meaningQuestion: "スケジュールの都合（？）、セミナーは延期された。",
+        meaningAnswer: "スケジュールの都合「のために」、セミナーは延期された。",
+        translation: "スケジュールの都合のために、セミナーは延期された。",
+        translationTarget: "のために",
+        eliminate: "Because / Although は接続詞なので後ろに S V が必要。Therefore は接続副詞なので、この位置で名詞句を直接続けない。",
+        final: "直後が名詞句なので前置詞に絞る。意味は「スケジュールの都合のために」なので due to。"
+      },
+      {
+        sentence: "The supplier apologized for the delay; _____, the client requested a refund.",
+        choices: ["nevertheless", "despite", "although", "because of"],
+        answer: "nevertheless",
+        afterBlank: ", the client requested a refund",
+        structure: "コンマ + S V（接続副詞, S V）",
+        allowed: "副詞",
+        posChoices: "接続副詞として使える選択肢は nevertheless のみ。",
+        candidateChoices: "nevertheless",
+        group: "逆接",
+        meaningNeed: "それにもかかわらず",
+        meaningQuestion: "納入業者は遅延について謝罪した。（？）、顧客は返金を求めた。",
+        meaningAnswer: "納入業者は遅延について謝罪した。「それにもかかわらず」、顧客は返金を求めた。",
+        translation: "納入業者は遅延について謝罪した。それにもかかわらず、顧客は返金を求めた。",
+        translationTarget: "それにもかかわらず",
+        eliminate: "Despite / because of は前置詞なので後ろに名詞が必要。Although は接続詞なので後ろに S V を直接続ける。",
+        final: "空欄直後がコンマ + S V なので接続副詞に絞る。意味は「それにもかかわらず」なので nevertheless。"
+      },
+      {
+        sentence: "_____ buying new computers, the company upgraded the software.",
+        choices: ["Instead of", "Instead", "Therefore", "While"],
+        answer: "Instead of",
+        afterBlank: "buying new computers",
+        structure: "動名詞句（名詞句）",
+        allowed: "前置詞",
+        posChoices: "前置詞として使える選択肢は Instead of のみ。",
+        candidateChoices: "Instead of",
+        group: "代替",
+        meaningNeed: "かわりに",
+        meaningQuestion: "新しいコンピューターを買う（？）、その会社はソフトウェアをアップグレードした。",
+        meaningAnswer: "新しいコンピューターを買う「代わりに」、その会社はソフトウェアをアップグレードした。",
+        translation: "新しいコンピューターを買う代わりに、その会社はソフトウェアをアップグレードした。",
+        translationTarget: "代わりに",
+        eliminate: "Instead / Therefore は接続副詞。While は接続詞なので後ろに S V が必要。",
+        final: "直後が動名詞句なので前置詞に絞る。意味は「買う代わりに」なので instead of。"
+      },
+      {
+        sentence: "The venue was unavailable; _____, the event was held online.",
+        choices: ["instead", "instead of", "unless", "during"],
+        answer: "instead",
+        afterBlank: ", the event was held online",
+        structure: "コンマ + S V（接続副詞, S V）",
+        allowed: "副詞",
+        posChoices: "接続副詞として使える選択肢は instead のみ。",
+        candidateChoices: "instead",
+        group: "代替",
+        meaningNeed: "その代わりに",
+        meaningQuestion: "会場が利用できなかった。（？）、イベントはオンラインで開催された。",
+        meaningAnswer: "会場が利用できなかった。「その代わりに」、イベントはオンラインで開催された。",
+        translation: "会場が利用できなかった。その代わりに、イベントはオンラインで開催された。",
+        translationTarget: "その代わりに",
+        eliminate: "Instead of / during は前置詞なので後ろに名詞が必要。Unless は接続詞なので後ろに S V を直接続ける。",
+        final: "空欄直後がコンマ + S V なので接続副詞に絞る。意味は「その代わりに」なので instead。"
+      },
+      {
+        sentence: "The company updated its website _____ customers could find information easily.",
+        choices: ["so that", "because", "although", "because of"],
+        answer: "so that",
+        afterBlank: "customers could find information easily",
+        structure: "S V",
+        allowed: "接続詞",
+        posChoices: "接続詞として使える選択肢は so that / because / although。",
+        candidateChoices: "so that / because / although",
+        group: "目的",
+        meaningNeed: "するために、できるように",
+        meaningQuestion: "その会社はウェブサイトを更新した（？）、顧客が情報を簡単に見つけられる。",
+        meaningAnswer: "その会社は、顧客が情報を簡単に見つけられる「ように」ウェブサイトを更新した。",
+        translation: "その会社は、顧客が情報を簡単に見つけられるようにウェブサイトを更新した。",
+        translationTarget: "ように",
+        eliminate: "Because of は前置詞なので後ろに名詞が必要。",
+        final: "直後が S V なので接続詞に絞る。so that / because / although が残るが、文意は目的なので so that。"
+      },
+      {
+        sentence: "_____ the documents remain complete, we can continue processing the application.",
+        choices: ["As long as", "Without", "Otherwise", "During"],
+        answer: "As long as",
+        afterBlank: "the documents remain complete",
+        structure: "S V",
+        allowed: "接続詞",
+        posChoices: "接続詞として使える選択肢は As long as のみ。",
+        candidateChoices: "As long as",
+        group: "条件",
+        meaningNeed: "する限り",
+        meaningQuestion: "書類が完全な状態である（？）、申請の処理を続けられます。",
+        meaningAnswer: "書類が完全な状態である「限り」、申請の処理を続けられます。",
+        translation: "書類が完全な状態である限り、申請の処理を続けられます。",
+        translationTarget: "限り",
+        eliminate: "Without / During は前置詞なので後ろに名詞が必要。Otherwise は接続副詞なので、空欄直後に S V を直接続けない。",
+        final: "直後が S V なので接続詞に絞る。選択肢の中で接続詞として使えるのは as long as。"
+      },
+      {
+        sentence: "_____ the contract has been signed, we can begin production.",
+        choices: ["Now that", "Because of", "Therefore", "Due to"],
+        answer: "Now that",
+        afterBlank: "the contract has been signed",
+        structure: "S V",
+        allowed: "接続詞",
+        posChoices: "接続詞として使える選択肢は Now that のみ。",
+        candidateChoices: "Now that",
+        group: "理由",
+        meaningNeed: "今では〜なので",
+        meaningQuestion: "契約が署名された（？）、生産を始められる。",
+        meaningAnswer: "契約が署名された「ので」、生産を始められる。",
+        translation: "契約が署名されたので、生産を始められます。",
+        translationTarget: "ので",
+        eliminate: "Because of / Due to は前置詞なので後ろに名詞が必要。Therefore は接続副詞なので、空欄直後に S V を直接続けない。",
+        final: "直後が S V なので接続詞に絞る。選択肢の中で接続詞として使えるのは now that。"
+      },
+      {
+        sentence: "Employees must wear gloves while _____ chemicals.",
+        choices: ["handling", "handled", "handle", "to handle"],
+        answer: "handling",
+        afterBlank: "while の後ろ",
+        structure: "現在分詞(-ing)",
+        allowed: "現在分詞",
+        posChoices: "現在分詞として使える選択肢は handling のみ。",
+        candidateChoices: "handling",
+        group: "時間",
+        meaningNeed: "しているあいだ",
+        meaningQuestion: "化学薬品を取り扱う（？）、従業員は手袋を着用しなければならない。",
+        meaningAnswer: "化学薬品を取り扱う「あいだ」、従業員は手袋を着用しなければならない。",
+        translation: "化学薬品を取り扱うあいだ、従業員は手袋を着用しなければならない。",
+        translationTarget: "あいだ",
+        eliminate: "handled は過去分詞、handle は動詞の原形、to handle は不定詞。ここでは while [they are] handling の省略形。",
+        final: "接続詞 while の後ろで主語 + be 動詞が省略されている。Employees と chemicals の関係は「取り扱っている」なので現在分詞 handling。",
+        step1Question: "接続詞 while の後ろの形は？",
+        step1Answer: "`while [they are] ...` のように主語 + be 動詞が省略され、<span class=\"step-candidate\">現在分詞(-ing)</span> が残る形。",
+        step2Question: "どの形？",
+        step2Title: "形",
+        candidateQuestion: "どの選択肢が現在分詞？"
+      },
+      {
+        sentence: "When _____ about the new policy, the manager gave a clear explanation.",
+        choices: ["asked", "asking", "ask", "to ask"],
+        answer: "asked",
+        afterBlank: "When の後ろ",
+        structure: "過去分詞(-ed)",
+        allowed: "過去分詞",
+        posChoices: "過去分詞として使える選択肢は asked のみ。",
+        candidateChoices: "asked",
+        group: "時間",
+        meaningNeed: "されたとき",
+        meaningQuestion: "新しい方針について尋ねられた（？）、マネージャーは明確に説明した。",
+        meaningAnswer: "新しい方針について尋ねられた「とき」、マネージャーは明確に説明した。",
+        translation: "新しい方針について尋ねられたとき、マネージャーは明確に説明した。",
+        translationTarget: "尋ねられたとき",
+        eliminate: "asking は現在分詞、ask は動詞の原形、to ask は不定詞。ここでは When [the manager was] asked の省略形。",
+        final: "接続詞 When の後ろで主語 + be 動詞が省略されている。マネージャーは「尋ねられる」側なので過去分詞 asked。",
+        step1Question: "接続詞 When の後ろの形は？",
+        step1Answer: "`When [the manager was] ...` のように主語 + be 動詞が省略され、<span class=\"step-candidate\">過去分詞(-ed)</span> が残る形。",
+        step2Question: "どの形？",
+        step2Title: "形",
+        candidateQuestion: "どの選択肢が過去分詞？"
       }
     ];
 
@@ -1244,6 +1903,210 @@
       "代替": { color: "#c0691b", soft: "#fff4e8", label: "alternative" },
       "条件": { color: "#0d8b68", soft: "#ecf8f3", label: "condition" },
       "目的": { color: "#6b4fd2", soft: "#f3f0ff", label: "purpose" }
+    };
+
+    const guideData = {
+      conj: {
+        label: "接続詞",
+        color: "#2358d8",
+        patterns: [
+          {
+            id: "conj-sv",
+            label: "[接続詞] + S V",
+            structure: "S V, S V",
+            en: "Although she was beautiful, John did not fall in love with her.",
+            ja: "「彼女は美しかったけれど、ジョンは彼女に惚れなかった」",
+            enTarget: "Although",
+            jaTarget: "けれど"
+          },
+          {
+            id: "conj-participle",
+            label: "補足: [接続詞] + 分詞",
+            structure: "分詞 (-ing/-ed)",
+            examples: [
+              {
+                label: "現在分詞 (-ing)",
+                enLines: [
+                  "You cannot watch TV while eating.",
+                  { text: "...while [you are] eating", note: true }
+                ],
+                ja: "「食事をしながらテレビを見てはいけません」",
+                enTarget: ["while", "eating"],
+                jaTarget: "食事をしながら"
+              },
+              {
+                label: "過去分詞 (-ed)",
+                enLines: [
+                  "When asked about the schedule, John explained the change.",
+                  { text: "...When [he was] asked about the schedule", note: true }
+                ],
+                ja: "「スケジュールについて尋ねられたとき、ジョンは変更を説明した」",
+                enTarget: ["When", "asked"],
+                jaTarget: ["尋ねられた", "とき"]
+              }
+            ]
+          }
+        ]
+      },
+      prep: {
+        label: "前置詞",
+        color: "#0d8b68",
+        patterns: [
+          {
+            id: "prep-noun",
+            label: "[前置詞] + 名詞",
+            structure: "名, S V",
+            en: "Despite her beauty, John did not fall in love with her.",
+            ja: "「彼女の美しさにもかかわらず、ジョンは惚れなかった」",
+            enTarget: "Despite",
+            jaTarget: "にもかかわらず"
+          }
+        ]
+      },
+      adv: {
+        label: "接続副詞",
+        color: "#c0691b",
+        patterns: [
+          {
+            id: "adv-comma",
+            label: "S V; [接続副詞], S V",
+            structure: ", S V",
+            en: "She was beautiful; nevertheless, John did not fall in love with her.",
+            ja: "「彼女は美しかった。それにもかかわらず、ジョンは惚れなかった」",
+            enTarget: "nevertheless",
+            jaTarget: "それにもかかわらず"
+          }
+        ]
+      },
+      inf: {
+        label: "不定詞",
+        color: "#6b4fd2",
+        patterns: [
+          {
+            id: "inf-verb",
+            label: "[不定詞] + V（原形）",
+            structure: "V（原形）",
+            en: "The team worked late in order to finish the proposal.",
+            ja: "「チームは提案書を終えるために遅くまで働いた」",
+            enTarget: "in order to",
+            jaTarget: "ために"
+          }
+        ]
+      }
+    };
+
+    let activeGuideType = "";
+    let activeGuidePattern = "";
+
+    const structureExamples = {
+      "although / even though": {
+        en: "Although the product was expensive, many customers purchased it.",
+        ja: "その商品は高かったけれど、多くの顧客がそれを購入した。",
+        enTarget: "Although",
+        jaTarget: "けれど"
+      },
+      "despite": {
+        en: "Despite the tight deadline, the team completed the report.",
+        ja: "厳しい締切にもかかわらず、チームは報告書を完成させた。",
+        enTarget: "Despite",
+        jaTarget: "にもかかわらず"
+      },
+      "nevertheless": {
+        en: "The product was expensive; nevertheless, many customers purchased it.",
+        ja: "その商品は高かった。それにもかかわらず、多くの顧客がそれを購入した。",
+        enTarget: "nevertheless",
+        jaTarget: "それにもかかわらず"
+      },
+      "because / since / as": {
+        en: "Because sales increased, the company hired more staff.",
+        ja: "売上が伸びたので、その会社はより多くのスタッフを雇った。",
+        enTarget: "Because",
+        jaTarget: "ので"
+      },
+      "because of / due to": {
+        en: "Because of increased sales, the company hired more staff.",
+        ja: "売上増加のため、その会社はより多くのスタッフを雇った。",
+        enTarget: "Because of",
+        jaTarget: "ため"
+      },
+      "therefore": {
+        en: "Sales increased; therefore, the company hired more staff.",
+        ja: "売上が伸びた。そのため、その会社はより多くのスタッフを雇った。",
+        enTarget: "therefore",
+        jaTarget: "そのため"
+      },
+      "while": {
+        en: "While the system is restarting, do not press any keys.",
+        ja: "システムが再起動しているあいだ、どのキーも押さないでください。",
+        enTarget: "While",
+        jaTarget: "あいだ"
+      },
+      "during": {
+        en: "During the training session, employees practiced using the new software.",
+        ja: "研修中、従業員は新しいソフトウェアの使い方を練習した。",
+        enTarget: "During",
+        jaTarget: "研修中"
+      },
+      "instead of": {
+        en: "Instead of attending the meeting, she sent a report.",
+        ja: "会議に出席する代わりに、彼女は報告書を送った。",
+        enTarget: "Instead of",
+        jaTarget: "代わりに"
+      },
+      "instead": {
+        en: "The manager was absent; instead, the assistant led the meeting.",
+        ja: "マネージャーは不在だった。その代わり、アシスタントが会議を進行した。",
+        enTarget: "instead",
+        jaTarget: "その代わり"
+      },
+      "unless": {
+        en: "Unless you submit the receipt, we cannot reimburse the expense.",
+        ja: "領収書を提出しなければ、その費用を払い戻すことはできません。",
+        enTarget: "Unless",
+        jaTarget: "なければ"
+      },
+      "without": {
+        en: "Without a receipt, we cannot reimburse the expense.",
+        ja: "領収書がなければ、その費用を払い戻すことはできません。",
+        enTarget: "Without",
+        jaTarget: "なければ"
+      },
+      "otherwise": {
+        en: "Please confirm your reservation today; otherwise, your seat may be released.",
+        ja: "本日中に予約を確認してください。そうでなければ、席が解放される可能性があります。",
+        enTarget: "otherwise",
+        jaTarget: "そうでなければ"
+      },
+      "so that / in order that": {
+        en: "The team worked late so that they could finish the proposal.",
+        ja: "チームは提案書を終えられるように、遅くまで働いた。",
+        enTarget: "so that",
+        jaTarget: "ように"
+      },
+      "so as to / in order to": {
+        en: "The team worked late in order to finish the proposal.",
+        ja: "チームは提案書を終えるために遅くまで働いた。",
+        enTarget: "in order to",
+        jaTarget: "ために"
+      },
+      "as long as": {
+        en: "As long as you submit the form today, we can process your request.",
+        ja: "本日中にフォームを提出する限り、私たちはあなたの依頼を処理できます。",
+        enTarget: "As long as",
+        jaTarget: "限り"
+      },
+      "now that": {
+        en: "Now that the budget has been approved, the team can start hiring.",
+        ja: "予算が承認されたので、チームは採用を始められます。",
+        enTarget: "Now that",
+        jaTarget: "ので"
+      },
+      "once": {
+        en: "Once the system restarts, you can log in again.",
+        ja: "一旦システムが再起動すると、再びログインできます。",
+        enTarget: "Once",
+        jaTarget: "一旦"
+      }
     };
 
     function styleVars(group) {
@@ -1349,7 +2212,7 @@
           <td class="term">${row.item.term}</td>
           ${row.firstInMeaning ? `<td class="merged-cell meaning" rowspan="${row.meaningSpan}">${row.item.meaning}</td>` : ""}
           <td><span class="pos ${posClass[row.item.pos]}">${row.item.pos}</span></td>
-          <td class="pattern">${row.item.pattern}</td>
+          <td class="pattern"><button class="pattern-button" data-example-term="${row.item.term}">${row.item.pattern}</button></td>
         </tr>
       `).join("");
       document.querySelector("#mobileVocabList").innerHTML = rows.map(row => `
@@ -1361,19 +2224,170 @@
           <h2 class="mobile-vocab-term">${row.item.term}</h2>
           <div class="mobile-vocab-grid">
             <div class="mobile-field"><span>意味</span><strong>${row.item.meaning}</strong></div>
-            <div class="mobile-field"><span>文構造</span><strong class="pattern">${row.item.pattern}</strong></div>
+            <div class="mobile-field"><span>文構造</span><button class="pattern-button" data-example-term="${row.item.term}">${row.item.pattern}</button></div>
           </div>
         </article>
       `).join("");
     }
 
+    function highlightText(text, target) {
+      if (!target || !text.includes(target)) return text;
+      return text.replace(target, `<span class="example-highlight">${target}</span>`);
+    }
+
+    function highlightAllText(text, target) {
+      const targets = Array.isArray(target) ? target : [target];
+      return targets.filter(Boolean).reduce((result, item) => {
+        if (!result.includes(item)) return result;
+        return result.split(item).join(`<span class="example-highlight">${item}</span>`);
+      }, text);
+    }
+
+    function highlightedTranslation(problem) {
+      return highlightText(problem.translation, problem.translationTarget);
+    }
+
+    function updateGuideTypeButtons() {
+      document.querySelectorAll("[data-guide-type]").forEach(button => {
+        button.classList.toggle("active", button.dataset.guideType === activeGuideType);
+      });
+    }
+
+    function renderGuideBoard() {
+      const board = document.querySelector("#guideBoard");
+      if (!activeGuideType) {
+        board.innerHTML = `<div class="guide-empty">品詞をクリックすると、文構造が大きく表示されます。</div>`;
+        return;
+      }
+
+      const guide = guideData[activeGuideType];
+      const activePattern = guide.patterns.find(pattern => pattern.id === activeGuidePattern);
+      board.style.setProperty("--guide-color", guide.color);
+      board.style.setProperty("--example-color", guide.color);
+      board.innerHTML = `
+        <div class="guide-board-head">
+          <h2>${guide.label}</h2>
+          <button class="guide-close" type="button" data-guide-board-close>閉じる</button>
+        </div>
+        <div class="guide-pattern-list">
+          ${guide.patterns.map(pattern => `
+            <button class="guide-pattern-button ${pattern.id === activeGuidePattern ? "active" : ""}" type="button" data-guide-pattern="${pattern.id}">
+              <span class="guide-pattern-label">${pattern.label}</span>
+              <span class="guide-pattern-main">${pattern.structure}</span>
+            </button>
+          `).join("")}
+        </div>
+        <div class="guide-example-panel ${activePattern ? "visible" : ""}">
+          ${activePattern ? guideExampleHtml(activePattern) : ""}
+        </div>
+      `;
+    }
+
+    function guideExampleHtml(pattern) {
+      const examples = pattern.examples || [pattern];
+      return `
+        <div class="guide-example-head">
+          <div class="guide-example-kicker">${pattern.label}</div>
+          <button class="guide-close" type="button" data-guide-close>閉じる</button>
+        </div>
+        ${examples.map(example => {
+          const enLines = example.enLines || [example.en];
+          return `
+            <div class="guide-example-item">
+              ${example.label ? `<div class="guide-example-subtitle">${example.label}</div>` : ""}
+              ${enLines.map(line => {
+                const text = typeof line === "string" ? line : line.text;
+                const className = typeof line === "string" || !line.note ? "guide-example-en" : "guide-example-note";
+                return `<p class="${className}">${highlightAllText(text, example.enTarget)}</p>`;
+              }).join("")}
+              <p class="guide-example-ja">${highlightAllText(example.ja, example.jaTarget)}</p>
+            </div>
+          `;
+        }).join("")}
+      `;
+    }
+
+    function selectGuideType(type) {
+      activeGuideType = type;
+      activeGuidePattern = "";
+      updateGuideTypeButtons();
+      renderGuideBoard();
+    }
+
+    function selectGuidePattern(patternId) {
+      activeGuidePattern = patternId;
+      renderGuideBoard();
+    }
+
+    function closeGuideExample() {
+      activeGuidePattern = "";
+      renderGuideBoard();
+    }
+
+    function closeGuideBoard() {
+      activeGuideType = "";
+      activeGuidePattern = "";
+      updateGuideTypeButtons();
+      renderGuideBoard();
+    }
+
+    function positionStructureExample(panel, button) {
+      const rect = button.getBoundingClientRect();
+      panel.classList.remove("left-tail");
+      const gap = 14;
+      const margin = 12;
+      const panelWidth = Math.min(420, window.innerWidth - margin * 2);
+      let left = rect.right + gap;
+      let top = rect.top;
+
+      if (left + panelWidth > window.innerWidth - margin) {
+        left = rect.left - panelWidth - gap;
+        panel.classList.add("left-tail");
+      }
+
+      if (left < margin) left = margin;
+
+      const panelHeight = panel.offsetHeight || 180;
+      if (top + panelHeight > window.innerHeight - margin) {
+        top = Math.max(margin, window.innerHeight - panelHeight - margin);
+      }
+
+      panel.style.left = `${left}px`;
+      panel.style.top = `${top}px`;
+    }
+
+    function hideStructureExample() {
+      const panel = document.querySelector("#structureExample");
+      panel.classList.remove("visible", "left-tail");
+    }
+
+    function showStructureExample(term, button) {
+      const item = vocab.find(entry => entry.term === term);
+      const example = structureExamples[term];
+      if (!item || !example) return;
+
+      const panel = document.querySelector("#structureExample");
+      const style = groupStyle[item.group];
+      panel.style.setProperty("--example-color", style.color);
+      panel.classList.add("visible");
+      panel.innerHTML = `
+        <div class="structure-example-head">
+          <h2>${item.term} / ${item.pattern}</h2>
+          <button class="structure-close" type="button" data-close-example>閉じる</button>
+        </div>
+        <p class="example-en">${highlightText(example.en, example.enTarget)}</p>
+        <p class="example-ja">${highlightText(example.ja, example.jaTarget)}</p>
+      `;
+      positionStructureExample(panel, button);
+    }
+
     function practiceSteps(problem) {
       const steps = [
-        { type: "question", title: "空欄直後の形は？", body: "" },
-        { type: "answer", title: "形", body: `「<span class="step-value">${problem.afterBlank}</span>」なので <span class="step-candidate">${problem.structure}</span>。` },
-        { type: "question", title: "どの品詞？", body: "" },
-        { type: "answer", title: "品詞", body: `<span class="step-candidate">${displayPos(problem.allowed)}</span>` },
-        { type: "question", title: `どの選択肢が${displayPos(problem.allowed)}？`, body: "" },
+        { type: "question", title: problem.step1Question || "空欄直後の形は？", body: "" },
+        { type: "answer", title: "形", body: problem.step1Answer || `「<span class="step-value">${problem.afterBlank}</span>」なので <span class="step-candidate">${problem.structure}</span>。` },
+        { type: "question", title: problem.step2Question || "どの品詞？", body: "" },
+        { type: "answer", title: problem.step2Title || "品詞", body: `<span class="step-candidate">${displayPos(problem.allowed)}</span>` },
+        { type: "question", title: problem.candidateQuestion || `どの選択肢が${displayPos(problem.allowed)}？`, body: "" },
         { type: "answer", title: "候補", body: `<span class="step-candidate">${problem.candidateChoices}</span><span class="step-note">補足: ${problem.eliminate}</span>` }
       ];
 
@@ -1390,10 +2404,9 @@
 
     function renderPractice() {
       document.querySelector("#practiceList").innerHTML = problems.map((problem, index) => `
-        <article class="problem" data-index="${index}" style="${styleVars(problem.group)}">
+        <article class="problem" data-index="${index}" style="--problem-color:#2358d8;--problem-soft:#eef4ff">
           <div class="problem-head">
             <div class="problem-meta">
-              <span class="problem-chip">${problem.group}</span>
               <h2>Question ${index + 1}</h2>
             </div>
             <p class="question">${problem.sentence.replace("_____", '<span class="blank"></span>')}</p>
@@ -1443,6 +2456,10 @@
       result.textContent = "";
     }
 
+    function resetAllProblems() {
+      document.querySelectorAll(".problem").forEach(resetProblem);
+    }
+
     function selectChoice(button) {
       const problemEl = button.closest(".problem");
       const problem = problems[Number(problemEl.dataset.index)];
@@ -1450,14 +2467,15 @@
       const correct = selected === problem.answer;
       const totalSteps = practiceSteps(problem).length;
       const nextStep = Math.min(Number(problemEl.dataset.step || "0") + 1, totalSteps);
+      const showResult = nextStep === totalSteps;
       problemEl.dataset.step = String(nextStep);
 
       problemEl.querySelector(".solution").classList.add("visible");
       problemEl.querySelector(".blank").textContent = selected;
       problemEl.querySelectorAll(".choice").forEach(choice => {
         choice.classList.toggle("selected", choice === button);
-        choice.classList.toggle("correct", choice.dataset.choice === problem.answer && nextStep === 4);
-        choice.classList.toggle("wrong", choice === button && !correct && nextStep === 4);
+        choice.classList.toggle("correct", choice.dataset.choice === problem.answer && showResult);
+        choice.classList.toggle("wrong", choice === button && !correct && showResult);
       });
 
       problemEl.querySelectorAll(".step").forEach((step, index) => {
@@ -1466,21 +2484,61 @@
       });
 
       const result = problemEl.querySelector(".result");
-      const showResult = nextStep === totalSteps;
       result.classList.toggle("visible", showResult);
       result.classList.toggle("good", showResult && correct);
       result.classList.toggle("bad", showResult && !correct);
-      result.textContent = showResult
+      result.innerHTML = showResult
         ? correct
-          ? `正解。${problem.final}`
-          : `不正解。あなたの選択は ${selected}。正解は ${problem.answer}。${problem.final}`
+          ? `<span class="result-title">🎉 正解！<span class="result-answer">${problem.answer}</span></span><span class="result-detail">${problem.final}</span><span class="result-translation">和訳: ${highlightedTranslation(problem)}</span>`
+          : `<span class="result-title">もう一歩。正解は <span class="result-answer">${problem.answer}</span></span><span class="result-detail">あなたの選択は ${selected}。${problem.final}</span><span class="result-translation">和訳: ${highlightedTranslation(problem)}</span>`
         : "";
     }
 
     document.addEventListener("click", event => {
+      if (event.target.closest("[data-close-example]")) {
+        hideStructureExample();
+        return;
+      }
+
+      if (
+        document.querySelector("#structureExample").classList.contains("visible") &&
+        !event.target.closest("#structureExample") &&
+        !event.target.closest("[data-example-term]")
+      ) {
+        hideStructureExample();
+      }
+
+      if (event.target.closest("[data-guide-close]")) {
+        closeGuideExample();
+        return;
+      }
+
+      if (event.target.closest("[data-guide-board-close]")) {
+        closeGuideBoard();
+        return;
+      }
+
+      const guideType = event.target.closest("[data-guide-type]");
+      if (guideType) {
+        selectGuideType(guideType.dataset.guideType);
+        return;
+      }
+
+      const guidePattern = event.target.closest("[data-guide-pattern]");
+      if (guidePattern) {
+        selectGuidePattern(guidePattern.dataset.guidePattern);
+        return;
+      }
+
       const tab = event.target.closest(".tab");
       if (tab) {
         switchTab(tab.dataset.tab);
+        return;
+      }
+
+      const patternButton = event.target.closest("[data-example-term]");
+      if (patternButton) {
+        showStructureExample(patternButton.dataset.exampleTerm, patternButton);
         return;
       }
 
@@ -1506,6 +2564,11 @@
         flashOrder = shuffle(flashVocab.map((_, index) => index));
         flashCursor = 0;
         renderFlashCard();
+        return;
+      }
+
+      if (event.target.closest("#resetAllProblems")) {
+        resetAllProblems();
         return;
       }
 
